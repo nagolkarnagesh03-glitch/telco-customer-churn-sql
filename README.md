@@ -94,53 +94,16 @@ Churned customers represent **$139,130 in monthly recurring revenue**. Targeted 
 
 ---
 
-## 📈 Sample Queries
+## 📈 Resume Points
 
-### Overall Churn Rate
-```sql
-SELECT
-    ROUND(SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS churn_rate_pct
-FROM customers;
--- Result: 26.58%
-```
+• Performed end-to-end customer churn analysis on 7,043 Telco customers using MySQL, identifying a 26.58% churn rate and $139,130 in monthly revenue at risk through 31 structured SQL queries.
 
-### Churn Rate by Contract Type
-```sql
-SELECT
-    contract,
-    COUNT(*) AS total_customers,
-    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
-    ROUND(SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS churn_rate_pct
-FROM customers
-GROUP BY contract
-ORDER BY churn_rate_pct DESC;
--- Result: Month-to-month 42.71% | One year 11.28% | Two year 2.85%
-```
+• Uncovered key churn drivers using GROUP BY, CASE WHEN, and CTEs — revealing that Month-to-month contract customers churn at 42.71% (15x higher than two-year contracts) and 48.54% of new customers leave within the first 12 months.
 
-### Customer Risk Scoring Model
-```sql
-WITH risk AS (
-    SELECT customerid,
-           CASE
-               WHEN contract = 'Month-to-month'
-                    AND tenure < 12
-                    AND techsupport = 'No'
-                    AND onlinesecurity = 'No' THEN 'Very High Risk'
-               WHEN tenure < 24              THEN 'Medium Risk'
-               ELSE                               'Low Risk'
-           END AS risk_level
-    FROM customers
-    WHERE churn = 'No'
-)
-SELECT risk_level,
-       COUNT(*) AS customers,
-       ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS pct
-FROM risk
-GROUP BY risk_level
-ORDER BY customers DESC;
-```
+• Built a multi-condition customer risk scoring model using window functions (RANK, DENSE_RANK, NTILE) to segment active customers into Very High, Medium, and Low risk categories — enabling targeted retention strategies.
 
----
+
+
 
 ## 📋 Business Recommendations
 
