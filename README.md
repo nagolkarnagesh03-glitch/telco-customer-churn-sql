@@ -217,8 +217,8 @@ USE customer_churn_db;
 
 **Nagesh Nagolkar**
 - LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/jobs/)
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
-- Email: your.email@gmail.com
+- GitHub: [github.com/yourusername](https://github.com/dashboard)
+- Email: nagolkarnagesh03@gmail.com
 
 ---
 
