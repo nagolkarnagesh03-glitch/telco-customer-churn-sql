@@ -215,8 +215,8 @@ USE customer_churn_db;
 
 ## 👤 Author
 
-**Your Name**
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+**Nagesh Nagolkar**
+- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/jobs/)
 - GitHub: [github.com/yourusername](https://github.com/yourusername)
 - Email: your.email@gmail.com
 
