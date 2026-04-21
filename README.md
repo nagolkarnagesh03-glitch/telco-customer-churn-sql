@@ -216,7 +216,7 @@ USE customer_churn_db;
 ## 👤 Author
 
 **Nagesh Nagolkar**
-- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/jobs/)
+- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/nagesh-nagolkar/)
 - GitHub: [github.com/yourusername](https://github.com/dashboard)
 - Email: nagolkarnagesh03@gmail.com
 
